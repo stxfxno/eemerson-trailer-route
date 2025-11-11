@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
     <header className="w-full border-b border-border bg-background">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Eemerson SAC Logo" className="h-12 w-12" />
           <span className="text-2xl font-bold text-primary">Eemerson SAC</span>
-        </div>
+        </Link>
         
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#about" className="text-foreground hover:text-accent transition-colors">
-            Nosotros
-          </a>
+          <Link to="/sobre-nosotros" className="text-foreground hover:text-accent transition-colors">
+            Sobre Nosotros
+          </Link>
           <a href="#services" className="text-foreground hover:text-accent transition-colors">
             Servicios
           </a>
