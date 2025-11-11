@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import aboutUsImage from "@/assets/About-us.png";
+import aboutHeroImage from "@/assets/about-hero.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutUs = () => {
@@ -9,22 +9,42 @@ const AboutUs = () => {
       <Header />
       
       <main className="flex-1">
-        {/* About Us Content */}
+        {/* Hero Section */}
+        <section className="relative bg-primary text-primary-foreground overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80 z-10"></div>
+          <img 
+            src={aboutHeroImage} 
+            alt="Sobre Nosotros - Eemerson SAC" 
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+          <div className="container mx-auto px-4 py-20 md:py-32 relative z-20">
+            <div className="max-w-3xl">
+              <p className="text-accent text-lg md:text-xl font-semibold mb-4 italic">About Us</p>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Eemerson SAC Más de <span className="text-accent">+15 Años de Experiencia</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-primary-foreground/90 italic">
+                Eemerson SAC: ¡Tu éxito es nuestro destino!
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Content Section */}
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
-              Sobre Nosotros
-            </h1>
-            
             <div className="space-y-8">
-              {/* Image in a smaller card format */}
-              <div className="rounded-lg overflow-hidden shadow-lg mb-8">
-                <img 
-                  src={aboutUsImage} 
-                  alt="Sobre Nosotros - Eemerson SAC" 
-                  className="w-full h-[280px] object-cover"
-                  loading="eager"
-                />
+
+              <div className="mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-destructive text-center mb-8">
+                  Bienvenido a Eemerson SAC
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  <strong className="text-foreground">Eemerson SAC</strong> es tu socio de confianza para garantizar una gestión logística y de transporte fluida y eficiente. Nuestro compromiso de sobresalir nos distingue en el dinámico mundo de la logística, brindando soluciones personalizadas y servicios al cliente personalizados.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Adaptados a tus necesidades, brindamos servicios de transporte confiables en Perú para garantizar que tus productos lleguen a su destino de manera segura y puntual. Nuestros servicios cubren Carga Completa, Carga Parcial y Transporte Local, garantizando una red empresarial integrada.
+                </p>
               </div>
 
               <Card className="border-primary/20">

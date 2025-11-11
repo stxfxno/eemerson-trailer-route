@@ -15,12 +15,12 @@ const Header = () => {
           <Link to="/sobre-nosotros" className="text-foreground hover:text-accent transition-colors">
             Sobre Nosotros
           </Link>
-          <a href="#services" className="text-foreground hover:text-accent transition-colors">
+          <Link to="/servicios" className="text-foreground hover:text-accent transition-colors">
             Servicios
-          </a>
-          <a href="#contact" className="text-foreground hover:text-accent transition-colors">
+          </Link>
+          <Link to="/contacto" className="text-foreground hover:text-accent transition-colors">
             Contacto
-          </a>
+          </Link>
           <Button variant="cta" size="sm">
             Cotizar Ahora
           </Button>
