@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import aboutHeroImage from "@/assets/about-hero.jpg";
+import aboutHeroImage from "@/assets/about-hero-operator.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutUs = () => {
@@ -11,21 +11,36 @@ const AboutUs = () => {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80 z-10"></div>
-          <img 
-            src={aboutHeroImage} 
-            alt="Sobre Nosotros - Eemerson SAC" 
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-          />
-          <div className="container mx-auto px-4 py-20 md:py-32 relative z-20">
-            <div className="max-w-3xl">
-              <p className="text-accent text-lg md:text-xl font-semibold mb-4 italic">About Us</p>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Eemerson SAC Más de <span className="text-accent">+15 Años de Experiencia</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 italic">
-                Eemerson SAC: ¡Tu éxito es nuestro destino!
-              </p>
+          <div className="grid md:grid-cols-2 min-h-[500px]">
+            {/* Left Side - Content with background pattern */}
+            <div className="relative bg-primary py-16 md:py-24 px-6 md:px-12 flex items-center">
+              {/* Decorative world map pattern */}
+              <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJkb3RzIiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIxIiBmaWxsPSJ3aGl0ZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNkb3RzKSIvPjwvc3ZnPg==')]"></div>
+              
+              {/* Decorative accent rectangle */}
+              <div className="absolute top-1/2 right-0 w-32 h-20 bg-accent transform translate-x-16 -translate-y-1/2 -skew-x-12"></div>
+              
+              <div className="relative z-10 max-w-xl">
+                <p className="text-accent text-lg md:text-xl font-semibold mb-4 italic">About Us</p>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
+                  Eemerson SAC Más de{" "}
+                  <span className="text-accent">+15 Años de Experiencia</span>
+                </h1>
+                <p className="text-lg md:text-xl text-primary-foreground/90 italic">
+                  Eemerson SAC: ¡Tu éxito es nuestro destino!
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side - Image without overlay */}
+            <div className="relative min-h-[400px] md:min-h-full">
+              <img 
+                src={aboutHeroImage} 
+                alt="Sobre Nosotros - Eemerson SAC" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Decorative frame border */}
+              <div className="absolute bottom-8 right-8 w-64 h-64 border-4 border-white/30 -z-0"></div>
             </div>
           </div>
         </section>
