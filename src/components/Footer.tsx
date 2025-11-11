@@ -48,19 +48,19 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Contacto</h3>
             <div className="space-y-3 text-primary-foreground/80">
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-destructive">Teléfono:</span>
+                <span className="font-semibold text-accent">Teléfono:</span>
                 <a href="tel:+51999999999" className="hover:text-accent transition-colors">
                   +51 999 999 999
                 </a>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-destructive">Email:</span>
+                <span className="font-semibold text-accent">Email:</span>
                 <a href="mailto:contacto@eemersonsac.com" className="hover:text-accent transition-colors">
                   contacto@eemersonsac.com
                 </a>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-destructive">Dirección:</span>
+                <span className="font-semibold text-accent">Dirección:</span>
                 <span>Lima, Perú</span>
               </p>
             </div>
