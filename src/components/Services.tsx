@@ -53,19 +53,19 @@ const Services = () => {
           necesidades logísticas en Perú, optimizando su proceso de distribución.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <Card key={index} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={service.image} 
+              <div className="relative h-72 overflow-hidden bg-muted">
+                <img
+                  src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <CardContent className="p-6 bg-primary text-primary-foreground">
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="mb-4 text-primary-foreground/90">{service.description}</p>
+              <CardContent className="p-8 bg-primary text-primary-foreground">
+                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                <p className="mb-6 text-primary-foreground/90 leading-relaxed">{service.description}</p>
                 <Button variant="cta" size="sm">
                   Cotizar Ahora
                 </Button>

@@ -48,18 +48,18 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Dirección",
-      content: "Lima, Perú"
+      title: "Encuéntranos en",
+      content: "Urb. Pro 2da Et. 5to. Sec. 39 Mza. C5 Lote 11 Urb. Pro-Los Olivos"
     },
     {
       icon: Phone,
-      title: "Teléfono",
-      content: "+51 999 999 999"
+      title: "Llámanos",
+      content: "(01) 691-0940 - +51 994172181"
     },
     {
       icon: Mail,
-      title: "Email",
-      content: "contacto@eemersonsac.com"
+      title: "Envíanos un correo",
+      content: "eemersonsac@eemersonsac.com"
     },
     {
       icon: Clock,
