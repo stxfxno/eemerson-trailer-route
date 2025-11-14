@@ -25,7 +25,7 @@ const AboutUs = () => {
                 <span className="text-accent text-sm font-semibold">Más de 15 Años de Experiencia</span>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Soluciones Logísticas de <span className="text-accent">Clase Mundial</span>
+                Soluciones Logísticas de <span className="text-accent italic">Clase Mundial</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-2xl">
                 Tu éxito es nuestro destino. Transporte de carga confiable, seguro y eficiente en todo el Perú.

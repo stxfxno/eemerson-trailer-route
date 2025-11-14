@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(copy \"src\\assets\\logo.png\" \"public\\favicon.png\")"
     ],
     "deny": [],
     "ask": []

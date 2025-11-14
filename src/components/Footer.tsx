@@ -43,7 +43,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-primary-foreground/90 hover:text-accent transition-colors text-sm flex items-center group">
+                <a
+                  href={`https://wa.me/51994172181?text=${encodeURIComponent("Hola, me gustaría solicitar una cotización gratis")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/90 hover:text-accent transition-colors text-sm flex items-center group"
+                >
                   <span className="w-1.5 h-1.5 bg-accent rounded-full mr-3 group-hover:w-3 transition-all"></span>
                   Cotización Gratis
                 </a>

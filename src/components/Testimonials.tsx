@@ -7,12 +7,12 @@ import croslandLogo from "@/assets/crosland-logo.png";
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "El servicio de transporte de carga es bueno y la tarifa competitiva.",
+      quote: "El servicio de transporte de carga es bueno y la tarifa competitiva en comparación con otras empresas del sector.",
       company: "CROSLAND S.A",
       logo: croslandLogo
     },
     {
-      quote: "Proveedor confiable.",
+      quote: "Proveedor confiable, me entregaron a tiempo y sin daños. Recomendado al 100%. ",
       company: "FOSFORERA PERUANA S.A",
       logo: fopesaLogo
     },

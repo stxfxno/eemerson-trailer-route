@@ -127,7 +127,7 @@ const ServicesPage = () => {
             <div className="max-w-3xl">
               <p className="text-accent text-lg md:text-xl font-semibold mb-4 italic">Services</p>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Nuestros <span className="text-accent">Servicios de Transporte</span>
+                Nuestros <span className="text-accent italic">Servicios de Transporte</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 italic">
                 Soluciones logísticas integrales para tu empresa
