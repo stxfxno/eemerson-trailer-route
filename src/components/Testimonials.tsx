@@ -1,20 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
+import fopesaLogo from "@/assets/fopesa-logo.png";
+import croslandLogo from "@/assets/crosland-logo.png";
 
 const Testimonials = () => {
   const testimonials = [
     {
       quote: "El servicio de transporte de carga es bueno y la tarifa competitiva.",
-      company: "CROSLAND S.A"
+      company: "CROSLAND S.A",
+      logo: croslandLogo
     },
     {
       quote: "Proveedor confiable.",
-      company: "FOSFORERA PERUANA S.A"
+      company: "FOSFORERA PERUANA S.A",
+      logo: fopesaLogo
     },
     {
       quote: "La atención por parte del personal y la capacidad de respuesta ante un servicio o requerimiento también es buena.",
-      company: "CROSLAND S.A"
+      company: "CROSLAND S.A",
+      logo: croslandLogo
     }
   ];
 
@@ -43,10 +48,17 @@ const Testimonials = () => {
                 <div className="p-4">
                   <Card className="border-border bg-card hover:shadow-lg transition-shadow h-full">
                     <CardContent className="p-8 flex flex-col h-full">
-                      <div className="flex gap-1 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                        ))}
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                          ))}
+                        </div>
+                        <img 
+                          src={testimonial.logo} 
+                          alt={testimonial.company}
+                          className="h-8 w-auto object-contain"
+                        />
                       </div>
                       <p className="text-foreground text-base mb-6 flex-grow italic leading-relaxed">
                         "{testimonial.quote}"
