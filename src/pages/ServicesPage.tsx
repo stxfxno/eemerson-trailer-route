@@ -78,11 +78,11 @@ const ServicesPage = () => {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/70 to-primary/40 z-10"></div>
           <img 
             src={servicesHeroImage} 
             alt="Servicios de Transporte - Eemerson SAC" 
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="container mx-auto px-4 py-20 md:py-32 relative z-20">
             <div className="max-w-3xl">

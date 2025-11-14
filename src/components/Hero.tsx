@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-truck.jpg";
 const Hero = () => {
   return (
     <section className="relative w-full min-h-[600px] bg-primary overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/70 to-primary/40 z-10" />
       <img 
         src={heroImage} 
         alt="Transporte de carga profesional" 
