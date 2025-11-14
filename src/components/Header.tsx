@@ -73,12 +73,12 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 z-50 md:hidden">
+          <div className="fixed inset-0 z-50 md:hidden animate-in fade-in duration-200">
             <div
               className="absolute inset-0 bg-background/80 backdrop-blur-sm"
               onClick={closeMobileMenu}
             />
-            <div className="absolute right-0 top-0 h-full w-[280px] bg-background border-l border-border shadow-xl">
+            <div className="absolute right-0 top-0 h-full w-[280px] bg-background border-l border-border shadow-xl animate-in slide-in-from-right duration-300">
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <span className="text-lg font-bold text-primary">Menú</span>
                 <Button
