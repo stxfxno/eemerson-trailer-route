@@ -115,21 +115,21 @@ const ServicesPage = () => {
             {services.map((service, index) => (
               <Card key={index} className="overflow-hidden border-primary/20">
                 <div className={`grid md:grid-cols-2 gap-0 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
-                  <div className={`relative h-80 md:h-auto ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
-                    <img 
-                      src={service.image} 
+                  <div className={`relative h-96 md:h-auto bg-muted ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
+                    <img
+                      src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
                   </div>
-                  <CardContent className="p-8 flex flex-col justify-center">
+                  <CardContent className="p-10 flex flex-col justify-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6">
                       <service.icon className="w-8 h-8 text-accent" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">{service.title}</h3>
-                    <p className="text-muted-foreground text-lg mb-6">{service.description}</p>
-                    <ul className="space-y-3 mb-6">
+                    <h3 className="text-2xl md:text-3xl font-bold text-primary mb-5">{service.title}</h3>
+                    <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{service.description}</p>
+                    <ul className="space-y-3 mb-8">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />

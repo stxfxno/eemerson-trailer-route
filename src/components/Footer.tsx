@@ -48,20 +48,25 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Contacto</h3>
             <div className="space-y-3 text-primary-foreground/80">
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-accent">Teléfono:</span>
-                <a href="tel:+51999999999" className="hover:text-accent transition-colors">
-                  +51 999 999 999
+                <span className="font-semibold text-accent">Llámanos:</span>
+                <span className="flex flex-col">
+                  <a href="tel:016910940" className="hover:text-accent transition-colors">
+                    (01) 691-0940
+                  </a>
+                  <a href="tel:+51994172181" className="hover:text-accent transition-colors">
+                    +51 994172181
+                  </a>
+                </span>
+              </p>
+              <p className="flex items-start gap-2">
+                <span className="font-semibold text-accent">Envíanos un correo:</span>
+                <a href="mailto:eemersonsac@eemersonsac.com" className="hover:text-accent transition-colors">
+                  eemersonsac@eemersonsac.com
                 </a>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-accent">Email:</span>
-                <a href="mailto:contacto@eemersonsac.com" className="hover:text-accent transition-colors">
-                  contacto@eemersonsac.com
-                </a>
-              </p>
-              <p className="flex items-start gap-2">
-                <span className="font-semibold text-accent">Dirección:</span>
-                <span>Lima, Perú</span>
+                <span className="font-semibold text-accent">Encuéntranos en:</span>
+                <span>Urb. Pro 2da Et. 5to. Sec. 39 Mza. C5 Lote 11 Urb. Pro-Los Olivos</span>
               </p>
             </div>
           </div>
