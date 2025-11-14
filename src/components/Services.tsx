@@ -55,7 +55,7 @@ const Services = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300 border-border">
+            <Card key={index} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300 border-border flex flex-col">
               <div className="relative h-72 overflow-hidden bg-muted">
                 <img
                   src={service.image}
@@ -63,12 +63,14 @@ const Services = () => {
                   className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <CardContent className="p-8 bg-card">
+              <CardContent className="p-8 bg-card flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-foreground">{service.title}</h3>
-                <p className="mb-6 text-muted-foreground leading-relaxed">{service.description}</p>
-                <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  Cotizar Ahora
-                </Button>
+                <p className="mb-6 text-muted-foreground leading-relaxed flex-grow">{service.description}</p>
+                <div className="mt-auto">
+                  <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    Cotizar Ahora
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}

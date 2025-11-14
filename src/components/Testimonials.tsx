@@ -40,37 +40,35 @@ const Testimonials = () => {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full max-w-7xl mx-auto"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2">
-                <div className="p-4">
-                  <Card className="border-border bg-card hover:shadow-lg transition-shadow h-full">
-                    <CardContent className="p-8 flex flex-col h-full">
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                          ))}
-                        </div>
-                        <img 
-                          src={testimonial.logo} 
-                          alt={testimonial.company}
-                          className="h-8 w-auto object-contain"
-                        />
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <Card className="border-border bg-card hover:shadow-lg transition-shadow h-full">
+                  <CardContent className="p-6 flex flex-col h-full min-h-[280px]">
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                        ))}
                       </div>
-                      <p className="text-foreground text-base mb-6 flex-grow italic leading-relaxed">
-                        "{testimonial.quote}"
+                      <img
+                        src={testimonial.logo}
+                        alt={testimonial.company}
+                        className="h-8 w-auto object-contain"
+                      />
+                    </div>
+                    <p className="text-foreground text-base mb-6 flex-grow italic leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
+                    <div className="border-t border-border pt-4 mt-auto">
+                      <p className="font-semibold text-primary">
+                        {testimonial.company}
                       </p>
-                      <div className="border-t border-border pt-4">
-                        <p className="font-semibold text-primary">
-                          {testimonial.company}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
