@@ -1,14 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import cargaSuelta from "@/assets/carga-suelta.png";
 import contenedores from "@/assets/contenedores.png";
 import refrigerados from "@/assets/refrigerados.png";
 import isotanques from "@/assets/isotanques.png";
 import peligrosa from "@/assets/peligrosa.png";
 import montacarga from "@/assets/montacarga.png";
-import fopesaLogo from "@/assets/fopesa-logo.png";
-import croslandLogo from "@/assets/crosland-logo.png";
 
 const Services = () => {
   const services = [
@@ -44,11 +41,6 @@ const Services = () => {
     },
   ];
 
-  const clientLogos = [
-    { name: "Fopesa", logo: fopesaLogo },
-    { name: "Crosland", logo: croslandLogo },
-  ];
-
   return (
     <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -61,7 +53,7 @@ const Services = () => {
           necesidades logísticas en Perú, optimizando su proceso de distribución.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <Card key={index} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300 border-border">
               <div className="relative h-72 overflow-hidden bg-muted">
@@ -80,40 +72,6 @@ const Services = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Client Logos Carousel */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground">
-            Nuestros Clientes
-          </h3>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {clientLogos.map((client, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-6">
-                    <Card className="border-border bg-card hover:shadow-lg transition-shadow">
-                      <CardContent className="flex aspect-square items-center justify-center p-8">
-                        <img
-                          src={client.logo}
-                          alt={client.name}
-                          className="max-w-full max-h-full object-contain"
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
         </div>
       </div>
     </section>

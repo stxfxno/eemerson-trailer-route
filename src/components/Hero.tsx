@@ -3,15 +3,15 @@ import heroImage from "@/assets/hero-truck.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-[600px] bg-primary overflow-hidden">
+    <section className="relative w-full min-h-[500px] md:min-h-[600px] lg:min-h-[650px] bg-primary overflow-hidden flex items-center">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/70 to-primary/40 z-10" />
       <img 
         src={heroImage} 
         alt="Transporte de carga profesional" 
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       
-      <div className="relative z-20 container mx-auto px-4 py-20 md:py-32">
+      <div className="relative z-20 container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
             Bienvenido a
