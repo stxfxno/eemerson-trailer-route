@@ -67,9 +67,16 @@ const Services = () => {
                 <h3 className="text-xl font-bold mb-4 text-foreground">{service.title}</h3>
                 <p className="mb-6 text-muted-foreground leading-relaxed flex-grow">{service.description}</p>
                 <div className="mt-auto">
-                  <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    Cotizar Ahora
-                  </Button>
+                  <a
+                    href={`https://wa.me/51994172181?text=${encodeURIComponent(`Hola, me gustaría cotizar el servicio de ${service.title}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                      Cotizar Ahora
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
