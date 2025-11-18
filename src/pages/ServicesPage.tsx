@@ -1,91 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import servicesHeroImage from "@/assets/services-hero.jpg";
-import cargaSuelta from "@/assets/carga-suelta.png";
-import contenedores from "@/assets/contenedores.png";
-import refrigerados from "@/assets/refrigerados.png";
-import isotanques from "@/assets/isotanques.png";
-import peligrosa from "@/assets/peligrosa.png";
-import montacarga from "@/assets/montacarga.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Package, Container, Snowflake, Droplet, AlertTriangle, Forklift, Clock, Shield, CheckCircle, Truck } from "lucide-react";
+import { servicesData } from "@/data/servicesData";
 
 const ServicesPage = () => {
-  const services = [
-    {
-      title: "Transporte de Carga Suelta",
-      description: "Servicio especializado para el transporte de mercancías sueltas, asegurando manipulación eficiente y entrega segura.",
-      image: cargaSuelta,
-      icon: Package,
-      details: [
-        "Manipulación especializada de mercancía suelta",
-        "Equipos de sujeción y protección adecuados",
-        "Servicio puerta a puerta",
-        "Cobertura nacional completa"
-      ]
-    },
-    {
-      title: "Transporte de Contenedores",
-      description: "Transporte de contenedores de 20 y 40 pies con seguimiento en tiempo real y cobertura nacional.",
-      image: contenedores,
-      icon: Container,
-      details: [
-        "Contenedores de 20 y 40 pies",
-        "Seguimiento GPS en tiempo real",
-        "Servicio intermodal (puerto-almacén)",
-        "Documentación y gestión aduanera"
-      ]
-    },
-    {
-      title: "Transporte de Refrigerados",
-      description: "Soluciones de cadena de frío para productos perecederos con control de temperatura constante.",
-      image: refrigerados,
-      icon: Snowflake,
-      details: [
-        "Control de temperatura de -25°C a +25°C",
-        "Monitoreo constante durante el trayecto",
-        "Certificación en cadena de frío",
-        "Ideal para alimentos y productos farmacéuticos"
-      ]
-    },
-    {
-      title: "Transporte de Isotanques",
-      description: "Transporte especializado de líquidos y químicos en isotanques certificados para máxima seguridad.",
-      image: isotanques,
-      icon: Droplet,
-      details: [
-        "Isotanques certificados y sellados",
-        "Transporte de líquidos alimenticios y químicos",
-        "Limpieza especializada entre cargas",
-        "Cumplimiento de normas internacionales"
-      ]
-    },
-    {
-      title: "Transporte de Mercancía Peligrosa: IMO e IQBF",
-      description: "Manejo certificado de materiales peligrosos cumpliendo con normas IMO e IQBF para transporte seguro.",
-      image: peligrosa,
-      icon: AlertTriangle,
-      details: [
-        "Certificación IMO e IQBF vigente",
-        "Personal capacitado y certificado",
-        "Vehículos con equipamiento especial",
-        "Seguro de carga especializado"
-      ]
-    },
-    {
-      title: "Servicio de Montacarga",
-      description: "Equipos de montacarga profesionales para carga y descarga eficiente en almacenes y puertos.",
-      image: montacarga,
-      icon: Forklift,
-      details: [
-        "Montacargas de 3 a 10 toneladas",
-        "Operadores certificados",
-        "Servicio en almacenes y puertos",
-        "Disponibilidad 24/7"
-      ]
-    },
-  ];
+  const navigate = useNavigate();
+
+  const servicesWithIcons = servicesData.map(service => {
+    let icon;
+    switch(service.id) {
+      case "carga-suelta": icon = Package; break;
+      case "contenedores": icon = Container; break;
+      case "refrigerados": icon = Snowflake; break;
+      case "isotanques": icon = Droplet; break;
+      case "mercancia-peligrosa": icon = AlertTriangle; break;
+      case "montacarga": icon = Forklift; break;
+      default: icon = Package;
+    }
+    return { ...service, icon };
+  });
 
   const benefits = [
     {
@@ -151,7 +88,7 @@ const ServicesPage = () => {
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
+            {servicesWithIcons.map((service, index) => (
               <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-border flex flex-col">
                 <div className="relative h-56 overflow-hidden bg-muted">
                   <img
@@ -168,7 +105,7 @@ const ServicesPage = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">{service.description}</p>
 
                   <ul className="space-y-2 mb-4 flex-grow">
-                    {service.details.map((detail, idx) => (
+                    {service.particularities.slice(0, 4).map((detail, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">{detail}</span>
@@ -176,15 +113,23 @@ const ServicesPage = () => {
                     ))}
                   </ul>
 
-                  <div className="mt-auto">
+                  <div className="mt-auto flex gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => navigate(`/servicios/${service.id}`)}
+                      className="flex-1 border-accent text-accent hover:bg-accent/10"
+                    >
+                      Leer más
+                    </Button>
                     <a
                       href={`https://wa.me/51994172181?text=${encodeURIComponent(`Hola, me gustaría cotizar el servicio de ${service.title}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block"
+                      className="flex-1"
                     >
                       <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
-                        Cotizar Ahora
+                        Cotizar
                       </Button>
                     </a>
                   </div>

@@ -1,45 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import cargaSuelta from "@/assets/carga-suelta.png";
-import contenedores from "@/assets/contenedores.png";
-import refrigerados from "@/assets/refrigerados.png";
-import isotanques from "@/assets/isotanques.png";
-import peligrosa from "@/assets/peligrosa.png";
-import montacarga from "@/assets/montacarga.png";
+import { servicesData } from "@/data/servicesData";
 
 const Services = () => {
-  const services = [
-    {
-      title: "Transporte de Carga Suelta",
-      description: "Servicio especializado para el transporte de mercancías sueltas, asegurando manipulación eficiente y entrega segura.",
-      image: cargaSuelta,
-    },
-    {
-      title: "Transporte de Contenedores",
-      description: "Transporte de contenedores de 20 y 40 pies con seguimiento en tiempo real y cobertura nacional.",
-      image: contenedores,
-    },
-    {
-      title: "Transporte de Refrigerados",
-      description: "Soluciones de cadena de frío para productos perecederos con control de temperatura constante.",
-      image: refrigerados,
-    },
-    {
-      title: "Transporte de Isotanques",
-      description: "Transporte especializado de líquidos y químicos en isotanques certificados para máxima seguridad.",
-      image: isotanques,
-    },
-    {
-      title: "Transporte de Mercancía Peligrosa: IMO e IQBF",
-      description: "Manejo certificado de materiales peligrosos cumpliendo con normas IMO e IQBF para transporte seguro.",
-      image: peligrosa,
-    },
-    {
-      title: "Servicio de Montacarga",
-      description: "Equipos de montacarga profesionales para carga y descarga eficiente en almacenes y puertos.",
-      image: montacarga,
-    },
-  ];
+  const navigate = useNavigate();
 
   return (
     <section id="services" className="py-20 bg-background">
@@ -54,7 +19,7 @@ const Services = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <Card key={index} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300 border-border flex flex-col">
               <div className="relative h-72 overflow-hidden bg-muted">
                 <img
@@ -66,15 +31,23 @@ const Services = () => {
               <CardContent className="p-8 bg-card flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-4 text-foreground">{service.title}</h3>
                 <p className="mb-6 text-muted-foreground leading-relaxed flex-grow">{service.description}</p>
-                <div className="mt-auto">
+                <div className="mt-auto flex gap-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => navigate(`/servicios/${service.id}`)}
+                    className="flex-1 border-accent text-accent hover:bg-accent/10"
+                  >
+                    Leer más
+                  </Button>
                   <a
                     href={`https://wa.me/51994172181?text=${encodeURIComponent(`Hola, me gustaría cotizar el servicio de ${service.title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block"
+                    className="flex-1"
                   >
-                    <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                      Cotizar Ahora
+                    <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
+                      Cotizar
                     </Button>
                   </a>
                 </div>
