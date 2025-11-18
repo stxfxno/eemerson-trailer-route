@@ -3,42 +3,43 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-[#1a2332] text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Logo y descripción */}
           <div className="lg:pr-8">
             <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="Eemerson SAC Logo" className="h-14 w-14" />
-              <span className="text-2xl font-bold">Eemerson SAC</span>
+              <img src={logo} alt="Eemerson SAC Logo" className="h-16 w-16" />
+              <span className="text-2xl font-black text-white uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                Eemerson SAC
+              </span>
             </div>
-            <p className="text-primary-foreground/90 leading-relaxed text-sm">
-              Eemerson SAC ofrece soluciones logísticas y de transporte personalizadas
-              en todo el Perú. Como miembro de un grupo empresarial especializado,
-              creamos un grupo de empresas afiliadas expertas que ofrecen permisos
-              regulatorios, seguro de carga y servicios de facturación.
+            <p className="text-white/80 leading-relaxed text-sm font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+              Logística moderna enfocada en seguridad y eficiencia para tu negocio en todo el Perú.
             </p>
           </div>
 
           {/* Servicios */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-accent">Servicios</h3>
+            <h3 className="text-lg font-black mb-6 text-[#f5a623] uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              Servicios
+            </h3>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-primary-foreground/90 hover:text-accent transition-colors text-sm flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-3 group-hover:w-3 transition-all"></span>
+                <a href="#services" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                  <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
                   Carga Completa
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-primary-foreground/90 hover:text-accent transition-colors text-sm flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-3 group-hover:w-3 transition-all"></span>
+                <a href="#services" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                  <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
                   Carga Parcial
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-primary-foreground/90 hover:text-accent transition-colors text-sm flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-3 group-hover:w-3 transition-all"></span>
+                <a href="#services" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                  <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
                   Transporte Local
                 </a>
               </li>
@@ -47,9 +48,9 @@ const Footer = () => {
                   href={`https://wa.me/51994172181?text=${encodeURIComponent("Hola, me gustaría solicitar una cotización gratis")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-foreground/90 hover:text-accent transition-colors text-sm flex items-center group"
+                  className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}
                 >
-                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-3 group-hover:w-3 transition-all"></span>
+                  <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
                   Cotización Gratis
                 </a>
               </li>
@@ -58,17 +59,19 @@ const Footer = () => {
 
           {/* Contacto */}
           <div id="contact">
-            <h3 className="text-xl font-bold mb-6 text-accent">Contacto</h3>
+            <h3 className="text-lg font-black mb-6 text-[#f5a623] uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              Contacto
+            </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-[#f5a623] mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <span className="font-semibold text-sm">Llámanos:</span>
+                  <span className="font-bold text-sm text-white" style={{ fontFamily: "'Montserrat', sans-serif" }}>Llámanos:</span>
                   <div className="flex flex-col gap-1 text-sm">
-                    <a href="tel:016910940" className="text-primary-foreground/90 hover:text-accent transition-colors">
+                    <a href="tel:016910940" className="text-white/80 hover:text-[#f5a623] transition-colors font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                       (01) 691-0940
                     </a>
-                    <a href="tel:+51994172181" className="text-primary-foreground/90 hover:text-accent transition-colors">
+                    <a href="tel:+51994172181" className="text-white/80 hover:text-[#f5a623] transition-colors font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                       +51 994172181
                     </a>
                   </div>
@@ -76,20 +79,20 @@ const Footer = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[#f5a623] mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <span className="font-semibold text-sm">Envíanos un correo:</span>
-                  <a href="mailto:eemersonsac@eemersonsac.com" className="text-primary-foreground/90 hover:text-accent transition-colors text-sm break-all">
+                  <span className="font-bold text-sm text-white" style={{ fontFamily: "'Montserrat', sans-serif" }}>Email:</span>
+                  <a href="mailto:eemersonsac@eemersonsac.com" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm break-all font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                     eemersonsac@eemersonsac.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-[#f5a623] mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <span className="font-semibold text-sm">Encuéntranos en:</span>
-                  <span className="text-primary-foreground/90 text-sm leading-relaxed">
+                  <span className="font-bold text-sm text-white" style={{ fontFamily: "'Montserrat', sans-serif" }}>Ubicación:</span>
+                  <span className="text-white/80 text-sm leading-relaxed font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                     Urb. Pro 2da Et. 5to. Sec. 39 Mza. C5 Lote 11<br />Urb. Pro-Los Olivos
                   </span>
                 </div>
@@ -98,8 +101,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <p className="text-center text-sm text-primary-foreground/70">
+        <div className="border-t border-[#f5a623]/20 pt-8 mt-4">
+          <p className="text-center text-sm text-white/60 font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
             © {new Date().getFullYear()} Eemerson SAC. Todos los derechos reservados.
           </p>
         </div>
