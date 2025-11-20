@@ -5,6 +5,12 @@ import isotanques from "@/assets/isotanques.png";
 import peligrosa from "@/assets/peligrosa.png";
 import montacarga from "@/assets/montacarga.png";
 
+export interface GalleryItem {
+  url: string;
+  title: string;
+  description: string;
+}
+
 export interface ServiceData {
   id: string;
   title: string;
@@ -13,7 +19,7 @@ export interface ServiceData {
   fullDescription: string;
   particularities: string[];
   example: string;
-  gallery?: string[];
+  gallery?: GalleryItem[];
   clients?: string[];
   faqs?: { question: string; answer: string }[];
 }
@@ -32,7 +38,33 @@ export const servicesData: ServiceData[] = [
       "Ideal para proyectos o traslados industriales específicos."
     ],
     example: "Traslado de maquinaria industrial desde Callao a Ate o Huachipa.",
-    gallery: [cargaSuelta],
+    gallery: [
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industrial",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industriala",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industriael",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industriafl",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industrialh",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      }
+    ],
     clients: [],
     faqs: [
       {
@@ -62,7 +94,13 @@ export const servicesData: ServiceData[] = [
       "Documentación y gestión aduanera"
     ],
     example: "Transporte de contenedor desde el puerto del Callao hasta almacén en Lima.",
-    gallery: [contenedores],
+    gallery: [
+      {
+        url: contenedores,
+        title: "Flota de Portacontenedores",
+        description: "Unidades modernas equipadas para el traslado seguro de contenedores."
+      }
+    ],
     clients: [],
     faqs: []
   },
@@ -79,7 +117,13 @@ export const servicesData: ServiceData[] = [
       "Ideal para alimentos y productos farmacéuticos"
     ],
     example: "Transporte de productos perecederos con temperatura controlada.",
-    gallery: [refrigerados],
+    gallery: [
+      {
+        url: refrigerados,
+        title: "Unidades Refrigeradas",
+        description: "Control preciso de temperatura para garantizar la cadena de frío."
+      }
+    ],
     clients: [],
     faqs: []
   },
@@ -96,7 +140,13 @@ export const servicesData: ServiceData[] = [
       "Supervisión técnica durante todo el proceso."
     ],
     example: "Transporte de isotanque IMO desde Neptunia a planta del cliente Quimtia.",
-    gallery: [isotanques],
+    gallery: [
+      {
+        url: isotanques,
+        title: "Operación de Isotanques",
+        description: "Manejo seguro y certificado de isotanques para industria química."
+      }
+    ],
     clients: ["Quimtia", "Neptunia"],
     faqs: [
       {
@@ -122,7 +172,13 @@ export const servicesData: ServiceData[] = [
       "Seguro de carga especializado"
     ],
     example: "Transporte de mercancía peligrosa con certificación IMO.",
-    gallery: [peligrosa],
+    gallery: [
+      {
+        url: peligrosa,
+        title: "Materiales Peligrosos",
+        description: "Cumplimiento estricto de normativa IMO e IQBF."
+      }
+    ],
     clients: [],
     faqs: []
   },
@@ -139,7 +195,13 @@ export const servicesData: ServiceData[] = [
       "Disponibilidad 24/7"
     ],
     example: "Servicio de carga y descarga en almacén industrial.",
-    gallery: [montacarga],
+    gallery: [
+      {
+        url: montacarga,
+        title: "Servicio de Montacarga",
+        description: "Equipos versátiles para maniobras de carga y descarga."
+      }
+    ],
     clients: [],
     faqs: []
   }

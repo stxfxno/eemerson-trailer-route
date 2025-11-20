@@ -24,11 +24,20 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const service = serviceId ? getServiceById(serviceId) : undefined;
 
@@ -42,7 +51,17 @@ const ServiceDetail = () => {
     return null;
   }
 
-  const gallery = service.gallery || [service.image];
+  // Handle gallery data structure (string[] vs object[])
+  const gallery = service.gallery
+    ? service.gallery.map(item =>
+      typeof item === 'string'
+        ? { url: item, title: service.title, description: service.description }
+        : item
+    )
+    : [{ url: service.image, title: service.title, description: service.description }];
+
+  // Ensure we show max 4 images in the grid
+  const displayGallery = gallery.slice(0, 4);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % gallery.length);
@@ -50,6 +69,14 @@ const ServiceDetail = () => {
 
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
+  };
+
+  const nextLightboxImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % gallery.length);
+  };
+
+  const prevLightboxImage = () => {
+    setLightboxIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
   };
 
   // Características de logística inteligente
@@ -84,7 +111,7 @@ const ServiceDetail = () => {
           {/* Image Slider con filtro */}
           <div className="absolute inset-0">
             <img
-              src={gallery[currentImageIndex]}
+              src={gallery[currentImageIndex].url}
               alt={`${service.title} - ${currentImageIndex + 1}`}
               className="w-full h-full object-cover brightness-75 contrast-125 transition-opacity duration-500"
             />
@@ -112,11 +139,10 @@ const ServiceDetail = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`h-1 rounded-full transition-all ${
-                      index === currentImageIndex
-                        ? "bg-[#f5a623] w-12"
-                        : "bg-white/40 hover:bg-white/60 w-8"
-                    }`}
+                    className={`h-1 rounded-full transition-all ${index === currentImageIndex
+                      ? "bg-[#f5a623] w-12"
+                      : "bg-white/40 hover:bg-white/60 w-8"
+                      }`}
                   />
                 ))}
               </div>
@@ -224,20 +250,6 @@ const ServiceDetail = () => {
                 </div>
               </div>
 
-              {/* Ejemplo Caso Real */}
-              <div className="bg-gradient-to-br from-[#1a2332] to-[#2a3342] rounded-2xl p-8 md:p-10 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#f5a623]/10 rounded-full blur-3xl"></div>
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-4 flex items-center gap-3" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                    <span className="text-4xl">📋</span>
-                    Caso Real
-                  </h3>
-                  <p className="text-white/90 leading-relaxed text-lg italic" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                    "{service.example}"
-                  </p>
-                </div>
-              </div>
-
               {/* Empresas que Confían - Con diseño de logos */}
               {service.clients && service.clients.length > 0 && (
                 <div>
@@ -335,6 +347,121 @@ const ServiceDetail = () => {
                     </CardContent>
                   </div>
                 </Card>
+
+                {/* Galería de Imágenes (Grid de 4) */}
+                <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
+                    {displayGallery.map((item, index) => (
+                      <div
+                        key={index}
+                        onClick={() => {
+                          setLightboxIndex(index);
+                          setLightboxOpen(true);
+                        }}
+                        className="cursor-pointer overflow-hidden rounded-lg border-2 border-[#1a2332]/10 hover:border-[#f5a623] transition-all aspect-square group relative"
+                      >
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10 flex items-center justify-center">
+                          <Eye className="text-white opacity-0 group-hover:opacity-100 transition-opacity w-8 h-8 drop-shadow-lg" />
+                        </div>
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Indicador de más imágenes */}
+                  {gallery.length > 4 && (
+                    <div className="flex justify-center gap-1 pt-2">
+                      <div className="w-2 h-2 rounded-full bg-[#1a2332]"></div>
+                      <div className="w-2 h-2 rounded-full bg-[#1a2332]/40"></div>
+                      <div className="w-2 h-2 rounded-full bg-[#1a2332]/40"></div>
+                    </div>
+                  )}
+
+                  {/* Lightbox Global */}
+                  <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+                    <DialogContent className="max-w-6xl bg-transparent border-none shadow-none p-0 flex items-center justify-center outline-none" aria-describedby="lightbox-description">
+                      <DialogTitle className="sr-only">Galería de imágenes</DialogTitle>
+                      <DialogDescription id="lightbox-description" className="sr-only">
+                        Vista ampliada de la galería de imágenes del servicio
+                      </DialogDescription>
+                      <div className="relative w-full bg-black/90 rounded-xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+
+                        {/* Botón Cerrar Custom */}
+                        <button
+                          onClick={() => setLightboxOpen(false)}
+                          className="absolute top-4 right-4 z-50 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white transition-colors md:hidden"
+                        >
+                          <span className="sr-only">Cerrar</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 18 12" /></svg>
+                        </button>
+
+                        {/* Imagen y Navegación */}
+                        <div className="relative flex-1 bg-black flex items-center justify-center min-h-[300px] md:min-h-[600px] group">
+                          {gallery[lightboxIndex] && (
+                            <img
+                              src={gallery[lightboxIndex].url}
+                              alt={gallery[lightboxIndex].title}
+                              className="max-w-full max-h-[80vh] object-contain"
+                            />
+                          )}
+
+                          {/* Botones de Navegación */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              prevLightboxImage();
+                            }}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all text-white opacity-0 group-hover:opacity-100"
+                          >
+                            <ChevronLeft className="w-8 h-8" />
+                          </button>
+
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              nextLightboxImage();
+                            }}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all text-white opacity-0 group-hover:opacity-100"
+                          >
+                            <ChevronRight className="w-8 h-8" />
+                          </button>
+                        </div>
+
+                        {/* Metadatos */}
+                        <div className="w-full md:w-96 bg-white p-8 flex flex-col justify-center relative">
+                          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#f5a623] to-[#1a2332]"></div>
+
+                          <span className="text-[#f5a623] font-bold text-sm uppercase tracking-wider mb-2">
+                            Galería {lightboxIndex + 1} / {gallery.length}
+                          </span>
+
+                          <h3 className="text-2xl font-black text-[#1a2332] mb-4 leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                            {gallery[lightboxIndex]?.title}
+                          </h3>
+
+                          <p className="text-[#1a2332]/70 leading-relaxed text-base font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                            {gallery[lightboxIndex]?.description}
+                          </p>
+
+                          <div className="mt-8 flex gap-2">
+                            {gallery.map((_, idx) => (
+                              <button
+                                key={idx}
+                                onClick={() => setLightboxIndex(idx)}
+                                className={`h-1.5 rounded-full transition-all ${idx === lightboxIndex ? "w-8 bg-[#f5a623]" : "w-2 bg-[#1a2332]/20 hover:bg-[#1a2332]/40"
+                                  }`}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </div>
               </div>
             </div>
           </div>
