@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { HelpCircle } from "lucide-react";
 
 const FAQ = () => {
   const faqs = [
@@ -27,33 +28,58 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-accent text-center mb-12">
-          Preguntas Frecuentes
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-[#1a2332] mb-4 uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            PREGUNTAS
+            <br />
+            <span className="text-[#f5a623]">FRECUENTES</span>
+          </h2>
+          <div className="w-24 h-1 bg-[#f5a623] mx-auto mb-6"></div>
+          <p className="text-[#1a2332]/70 max-w-2xl mx-auto text-lg font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+            Encuentra respuestas a las preguntas más comunes sobre nuestros servicios
+          </p>
+        </div>
         
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
+            <AccordionItem
+              key={index}
               value={`item-${index}`}
-              className="bg-card border border-border rounded-lg px-6"
+              className="bg-white border-2 border-[#1a2332]/10 hover:border-[#f5a623]/50 rounded-xl px-6 shadow-md hover:shadow-xl transition-all"
             >
-              <AccordionTrigger className="text-left hover:no-underline py-4">
-                <span className="font-semibold text-foreground">{faq.question}</span>
+              <AccordionTrigger className="text-left hover:no-underline py-5 group">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#f5a623]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#f5a623]/20 transition-colors">
+                    <HelpCircle className="w-5 h-5 text-[#f5a623]" />
+                  </div>
+                  <span className="font-bold text-[#1a2332] group-hover:text-[#f5a623] transition-colors" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                    {faq.question}
+                  </span>
+                </div>
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-4">
+              <AccordionContent className="text-[#1a2332]/70 pb-5 pl-11 leading-relaxed font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        
-        <div className="mt-8 text-center">
-          <Button variant="cta" size="lg">
-            Más Información
-          </Button>
+
+        <div className="mt-12 text-center">
+          <a
+            href={`https://wa.me/51994172181?text=${encodeURIComponent("Hola, necesito más información sobre los servicios")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              size="lg"
+              className="bg-[#f5a623] hover:bg-[#f5a623]/90 text-[#1a2332] font-bold text-lg px-8 py-6 rounded-lg shadow-2xl hover:shadow-[#f5a623]/50 transition-all uppercase tracking-wide"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Más Información →
+            </Button>
+          </a>
         </div>
       </div>
     </section>

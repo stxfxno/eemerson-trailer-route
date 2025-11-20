@@ -5,6 +5,12 @@ import isotanques from "@/assets/isotanques.png";
 import peligrosa from "@/assets/peligrosa.png";
 import montacarga from "@/assets/montacarga.png";
 
+export interface GalleryItem {
+  url: string;
+  title: string;
+  description: string;
+}
+
 export interface ServiceData {
   id: string;
   title: string;
@@ -13,8 +19,7 @@ export interface ServiceData {
   fullDescription: string;
   particularities: string[];
   example: string;
-  advantages: string[];
-  gallery?: string[];
+  gallery?: GalleryItem[];
   clients?: string[];
   faqs?: { question: string; answer: string }[];
 }
@@ -33,12 +38,33 @@ export const servicesData: ServiceData[] = [
       "Ideal para proyectos o traslados industriales específicos."
     ],
     example: "Traslado de maquinaria industrial desde Callao a Ate o Huachipa.",
-    advantages: [
-      "Flexibilidad en tipo de carga.",
-      "Experiencia en transporte de maquinaria pesada.",
-      "Seguimiento digital y documentación en línea."
+    gallery: [
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industrial",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industriala",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industriael",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industriafl",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      },
+      {
+        url: cargaSuelta,
+        title: "Carga Suelta Industrialh",
+        description: "Transporte especializado de maquinaria y equipos de gran volumen."
+      }
     ],
-    gallery: [cargaSuelta],
     clients: [],
     faqs: [
       {
@@ -68,12 +94,13 @@ export const servicesData: ServiceData[] = [
       "Documentación y gestión aduanera"
     ],
     example: "Transporte de contenedor desde el puerto del Callao hasta almacén en Lima.",
-    advantages: [
-      "Servicio rápido y confiable",
-      "Cobertura nacional completa",
-      "Seguimiento en tiempo real"
+    gallery: [
+      {
+        url: contenedores,
+        title: "Flota de Portacontenedores",
+        description: "Unidades modernas equipadas para el traslado seguro de contenedores."
+      }
     ],
-    gallery: [contenedores],
     clients: [],
     faqs: []
   },
@@ -90,12 +117,13 @@ export const servicesData: ServiceData[] = [
       "Ideal para alimentos y productos farmacéuticos"
     ],
     example: "Transporte de productos perecederos con temperatura controlada.",
-    advantages: [
-      "Equipos modernos de refrigeración",
-      "Monitoreo constante de temperatura",
-      "Certificaciones de calidad"
+    gallery: [
+      {
+        url: refrigerados,
+        title: "Unidades Refrigeradas",
+        description: "Control preciso de temperatura para garantizar la cadena de frío."
+      }
     ],
-    gallery: [refrigerados],
     clients: [],
     faqs: []
   },
@@ -112,12 +140,13 @@ export const servicesData: ServiceData[] = [
       "Supervisión técnica durante todo el proceso."
     ],
     example: "Transporte de isotanque IMO desde Neptunia a planta del cliente Quimtia.",
-    advantages: [
-      "Alta especialización técnica.",
-      "Protocolos de seguridad validados.",
-      "Seguro de carga y monitoreo constante."
+    gallery: [
+      {
+        url: isotanques,
+        title: "Operación de Isotanques",
+        description: "Manejo seguro y certificado de isotanques para industria química."
+      }
     ],
-    gallery: [isotanques],
     clients: ["Quimtia", "Neptunia"],
     faqs: [
       {
@@ -143,12 +172,13 @@ export const servicesData: ServiceData[] = [
       "Seguro de carga especializado"
     ],
     example: "Transporte de mercancía peligrosa con certificación IMO.",
-    advantages: [
-      "Personal altamente capacitado",
-      "Cumplimiento normativo estricto",
-      "Equipos especializados"
+    gallery: [
+      {
+        url: peligrosa,
+        title: "Materiales Peligrosos",
+        description: "Cumplimiento estricto de normativa IMO e IQBF."
+      }
     ],
-    gallery: [peligrosa],
     clients: [],
     faqs: []
   },
@@ -165,12 +195,13 @@ export const servicesData: ServiceData[] = [
       "Disponibilidad 24/7"
     ],
     example: "Servicio de carga y descarga en almacén industrial.",
-    advantages: [
-      "Equipos modernos",
-      "Operadores certificados",
-      "Servicio 24/7"
+    gallery: [
+      {
+        url: montacarga,
+        title: "Servicio de Montacarga",
+        description: "Equipos versátiles para maniobras de carga y descarga."
+      }
     ],
-    gallery: [montacarga],
     clients: [],
     faqs: []
   }

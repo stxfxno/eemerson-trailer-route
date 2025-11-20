@@ -53,33 +53,38 @@ const ServicesPage = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-primary text-primary-foreground overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/70 to-primary/40 z-10"></div>
-          <img 
-            src={servicesHeroImage} 
-            alt="Servicios de Transporte - Eemerson SAC" 
-            className="absolute inset-0 w-full h-full object-cover"
+        <section className="relative bg-[#1a2332] text-white overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/85 to-[#1a2332]/60 z-10"></div>
+          <img
+            src={servicesHeroImage}
+            alt="Servicios de Transporte - Eemerson SAC"
+            className="absolute inset-0 w-full h-full object-cover brightness-75 contrast-125"
           />
           <div className="container mx-auto px-4 py-20 md:py-32 relative z-20">
-            <div className="max-w-3xl">
-              <p className="text-accent text-lg md:text-xl font-semibold mb-4 italic">Services</p>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Nuestros <span className="text-accent italic">Servicios de Transporte</span>
+            <div className="max-w-4xl">
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase leading-tight tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                SERVICIOS
+                <br />
+                <span className="text-[#f5a623]">ESPECIALIZADOS</span>
               </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 italic">
-                Soluciones logísticas integrales para tu empresa
+              <div className="w-24 h-1 bg-[#f5a623] mb-6"></div>
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                Soluciones logísticas integrales para tu empresa en todo el Perú
               </p>
             </div>
           </div>
         </section>
 
         {/* Welcome Section */}
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Nuestros Servicios Especializados
+        <div className="container mx-auto px-4 py-20 bg-white">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-[#1a2332] mb-4 uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              SOLUCIONES
+              <br />
+              <span className="text-[#f5a623]">LOGÍSTICAS</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="w-24 h-1 bg-[#f5a623] mx-auto mb-6"></div>
+            <p className="text-lg text-[#1a2332]/70 leading-relaxed font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               Eemerson SAC ofrece soluciones logísticas y de transporte confiables,
               minimizando los riesgos y costos de su empresa. Nos encargamos de sus
               necesidades logísticas en Perú, optimizando su proceso de distribución.
@@ -89,8 +94,8 @@ const ServicesPage = () => {
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {servicesWithIcons.map((service, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-border flex flex-col">
-                <div className="relative h-56 overflow-hidden bg-muted">
+              <Card key={index} className="overflow-hidden group hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 border-[#1a2332]/10 hover:border-[#f5a623]/50 flex flex-col">
+                <div className="relative h-56 overflow-hidden bg-[#1a2332]/5">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -98,17 +103,17 @@ const ServicesPage = () => {
                   />
                 </div>
                 <CardContent className="p-6 flex flex-col flex-grow">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 mb-4">
-                    <service.icon className="w-6 h-6 text-accent" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#f5a623]/10 mb-4">
+                    <service.icon className="w-6 h-6 text-[#f5a623]" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{service.description}</p>
+                  <h3 className="text-xl font-bold text-[#1a2332] mb-3 uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>{service.title}</h3>
+                  <p className="text-[#1a2332]/70 text-sm leading-relaxed mb-4 font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>{service.description}</p>
 
                   <ul className="space-y-2 mb-4 flex-grow">
                     {service.particularities.slice(0, 4).map((detail, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{detail}</span>
+                        <CheckCircle className="w-4 h-4 text-[#f5a623] flex-shrink-0 mt-0.5" />
+                        <span className="text-[#1a2332]/70 font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -118,9 +123,10 @@ const ServicesPage = () => {
                       variant="outline"
                       size="sm"
                       onClick={() => navigate(`/servicios/${service.id}`)}
-                      className="flex-1 border-accent text-accent hover:bg-accent/10"
+                      className="flex-1 border-2 border-[#1a2332] text-[#1a2332] hover:bg-[#1a2332] hover:text-white font-bold uppercase tracking-wide"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
-                      Leer más
+                      Ver Más
                     </Button>
                     <a
                       href={`https://wa.me/51994172181?text=${encodeURIComponent(`Hola, me gustaría cotizar el servicio de ${service.title}`)}`}
@@ -128,7 +134,7 @@ const ServicesPage = () => {
                       rel="noopener noreferrer"
                       className="flex-1"
                     >
-                      <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
+                      <Button size="sm" className="bg-[#f5a623] hover:bg-[#f5a623]/90 text-[#1a2332] w-full font-bold uppercase tracking-wide" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                         Cotizar
                       </Button>
                     </a>
@@ -139,20 +145,29 @@ const ServicesPage = () => {
           </div>
 
           {/* Benefits Section */}
-          <div className="bg-primary/5 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-center text-primary mb-12">
-              ¿Por Qué Elegir Nuestros Servicios?
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4">
-                    <benefit.icon className="w-8 h-8 text-accent" />
+          <div className="bg-gradient-to-br from-[#1a2332] via-[#1a2332] to-[#2a3342] rounded-2xl p-8 md:p-12 relative overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#f5a623]/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#f5a623]/5 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-black text-center text-white mb-4 uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                ¿POR QUÉ ELEGIR
+                <br />
+                <span className="text-[#f5a623]">NUESTROS SERVICIOS?</span>
+              </h2>
+              <div className="w-24 h-1 bg-[#f5a623] mx-auto mb-12"></div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#f5a623]/10 mb-4 group-hover:bg-[#f5a623]/20 transition-colors">
+                      <benefit.icon className="w-8 h-8 text-[#f5a623]" />
+                    </div>
+                    <h3 className="font-bold text-lg text-white mb-2 uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>{benefit.title}</h3>
+                    <p className="text-white/80 font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>{benefit.description}</p>
                   </div>
-                  <h3 className="font-bold text-lg text-foreground mb-2">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
