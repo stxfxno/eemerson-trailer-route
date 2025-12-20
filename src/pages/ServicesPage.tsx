@@ -85,9 +85,9 @@ const ServicesPage = () => {
               </h2>
               <div className="w-24 h-1 bg-[#f5a623] mx-auto mb-6"></div>
               <p className="text-lg text-[#1a2332]/70 leading-relaxed font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                Eemerson SAC ofrece soluciones logísticas y de transporte confiables,
-                minimizando los riesgos y costos de su empresa. Nos encargamos de sus
-                necesidades logísticas en Perú, optimizando su proceso de distribución.
+                Soluciones logísticas confiables que minimizan riesgos y costos.
+                <br />
+                <span className="text-[#f5a623] font-semibold">Optimizamos tu distribución en todo el Perú.</span>
               </p>
             </div>
 

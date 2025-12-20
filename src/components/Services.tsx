@@ -21,7 +21,8 @@ const Services = () => {
           <div className="w-24 h-1 bg-[#f5a623] mx-auto mb-6"></div>
           <p className="text-center text-[#1a2332]/70 mb-6 max-w-3xl mx-auto text-lg font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
             Soluciones logísticas confiables que minimizan riesgos y costos.
-            <span className="text-[#f5a623] font-semibold"> Optimizamos tu distribución en todo el Perú.</span>
+            <br />
+            <span className="text-[#f5a623] font-semibold">Optimizamos tu distribución en todo el Perú.</span>
           </p>
         </div>
         

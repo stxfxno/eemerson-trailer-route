@@ -26,32 +26,39 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                <a href="/servicios" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                   <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
-                  Carga Completa
+                  Carga Suelta
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                <a href="/servicios" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                   <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
-                  Carga Parcial
+                  Contenedores
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                <a href="/servicios" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                   <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
-                  Transporte Local
+                  Refrigerados
                 </a>
               </li>
               <li>
-                <a
-                  href={`https://wa.me/51994172181?text=${encodeURIComponent("Hola, me gustaría solicitar una cotización gratis")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}
-                >
+                <a href="/servicios" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                   <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
-                  Cotización Gratis
+                  Isotanques
+                </a>
+              </li>
+              <li>
+                <a href="/servicios" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                  <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
+                  Mercancía Peligrosa
+                </a>
+              </li>
+              <li>
+                <a href="/servicios" className="text-white/80 hover:text-[#f5a623] transition-colors text-sm flex items-center group font-medium" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                  <span className="w-1.5 h-1.5 bg-[#f5a623] rounded-full mr-3 group-hover:w-3 transition-all"></span>
+                  Servicio de Montacarga
                 </a>
               </li>
             </ul>
