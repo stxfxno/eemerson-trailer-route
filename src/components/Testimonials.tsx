@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star, Quote } from "lucide-react";
-import fopesaLogo from "@/assets/fopesa-logo.png";
+import fopesaLogo from "@/assets/fopesa-logo.webp";
 import croslandLogo from "@/assets/crosland-logo.png";
 
 const Testimonials = () => {
@@ -66,6 +66,7 @@ const Testimonials = () => {
                       <img
                         src={testimonial.logo}
                         alt={testimonial.company}
+                        loading="lazy"
                         className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                       />
                     </div>

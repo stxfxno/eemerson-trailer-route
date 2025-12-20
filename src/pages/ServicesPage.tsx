@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import servicesHeroImage from "@/assets/services-hero.jpg";
+import servicesHeroImage from "@/assets/services-hero.webp";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Package, Container, Snowflake, Droplet, AlertTriangle, Forklift, Clock, Shield, CheckCircle, Truck } from "lucide-react";
