@@ -1,9 +1,9 @@
-import cargaSuelta from "@/assets/carga-suelta.png";
-import contenedores from "@/assets/contenedores.png";
-import refrigerados from "@/assets/refrigerados.png";
-import isotanques from "@/assets/isotanques.png";
-import peligrosa from "@/assets/peligrosa.png";
-import montacarga from "@/assets/montacarga.png";
+import cargaSuelta from "@/assets/carga-suelta.webp";
+import contenedores from "@/assets/contenedores.webp";
+import refrigerados from "@/assets/refrigerados.webp";
+import isotanques from "@/assets/isotanques.webp";
+import peligrosa from "@/assets/peligrosa.webp";
+import montacarga from "@/assets/montacarga.webp";
 
 export interface GalleryItem {
   url: string;

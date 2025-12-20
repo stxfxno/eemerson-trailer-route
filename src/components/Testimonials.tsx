@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star, Quote } from "lucide-react";
-import fopesaLogo from "@/assets/fopesa-logo.png";
+import fopesaLogo from "@/assets/fopesa-logo.webp";
 import croslandLogo from "@/assets/crosland-logo.png";
 
 const Testimonials = () => {

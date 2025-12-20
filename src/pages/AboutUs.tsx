@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import aboutHeroImage from "@/assets/about-hero.jpg";
+import aboutHeroImage from "@/assets/about-hero.webp";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Clock, Shield, CheckCircle, Award, Zap, Eye } from "lucide-react";
 

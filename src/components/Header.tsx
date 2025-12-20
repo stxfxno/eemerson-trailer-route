@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 import { useState } from "react";
 import { X } from "lucide-react";
 import TopBar from "./TopBar";

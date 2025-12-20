@@ -3,7 +3,7 @@
     "allow": [
       "Bash(npm run dev:*)",
       "Bash(npm run build:*)",
-      "Bash(copy \"src\\assets\\logo.png\" \"public\\favicon.png\")",
+      "Bash(copy \"src\\assets\\logo.webp\" \"public\\favicon.png\")",
       "Bash(npx tsc --noEmit)"
     ],
     "deny": [],
