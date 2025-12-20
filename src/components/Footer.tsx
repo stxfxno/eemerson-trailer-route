@@ -93,7 +93,7 @@ const Footer = () => {
                 <div className="flex flex-col gap-1">
                   <span className="font-bold text-sm text-white" style={{ fontFamily: "'Montserrat', sans-serif" }}>Ubicación:</span>
                   <span className="text-white/80 text-sm leading-relaxed font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                    Urb. Pro 2da Et. 5to. Sec. 39 Mza. C5 Lote 11<br />Urb. Pro-Los Olivos
+                    Callao y Lima Metropolitana, Perú
                   </span>
                 </div>
               </div>

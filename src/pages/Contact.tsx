@@ -49,7 +49,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Encuéntranos en",
-      content: "Urb. Pro 2da Et. 5to. Sec. 39 Mza. C5 Lote 11 Urb. Pro-Los Olivos"
+      content: "Callao y Lima Metropolitana, Perú"
     },
     {
       icon: Phone,
@@ -240,30 +240,6 @@ const Contact = () => {
                   </CardContent>
                 </div>
               </Card>
-            </div>
-          </div>
-        </div>
-
-        {/* Map Section */}
-        <div className="bg-gray-50 py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-black text-[#1a2332] mb-4 uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  NUESTRA UBICACIÓN
-                </h2>
-                <div className="w-24 h-1 bg-[#f5a623] mx-auto"></div>
-              </div>
-
-              <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-200">
-                <div className="bg-[#1a2332]/5 rounded-lg h-[400px] flex items-center justify-center border-2 border-dashed border-[#1a2332]/10">
-                  <div className="text-center text-[#1a2332]/40">
-                    <MapPin className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                    <p className="text-xl font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Mapa Interactivo</p>
-                    <p className="text-sm mt-2 font-light">Próximamente disponible</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
