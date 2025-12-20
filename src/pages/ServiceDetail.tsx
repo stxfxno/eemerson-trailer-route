@@ -79,24 +79,32 @@ const ServiceDetail = () => {
     setLightboxIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
   };
 
-  // Características de logística inteligente
-  const smartLogistics = [
-    {
-      icon: Radio,
-      title: "Rastreo 24/7 en Tiempo Real",
-      description: "App móvil y portal web que te permite ver la ubicación exacta, temperatura y presión del isotanque en todo momento."
-    },
-    {
-      icon: FileText,
-      title: "Gestión Cero Papel",
-      description: "Todas las certificaciones y documentos de carga accesibles digitalmente desde cualquier dispositivo."
-    },
-    {
-      icon: Eye,
-      title: "Seguridad Predictiva",
-      description: "Sensores inteligentes que detectan y previenen problemas antes de que ocurran, no solo los monitoran."
-    }
-  ];
+  // Características de logística inteligente - Iconos por defecto si no vienen en los datos
+  const defaultIcons = [Radio, FileText, Eye];
+
+  const smartLogistics = service.smartLogistics
+    ? service.smartLogistics.map((item, index) => ({
+        icon: defaultIcons[index] || Radio,
+        title: item.title,
+        description: item.description
+      }))
+    : [
+        {
+          icon: Radio,
+          title: "Rastreo 24/7 en Tiempo Real",
+          description: "App móvil y portal web que te permite ver la ubicación exacta, temperatura y presión del isotanque en todo momento."
+        },
+        {
+          icon: FileText,
+          title: "Gestión Cero Papel",
+          description: "Todas las certificaciones y documentos de carga accesibles digitalmente desde cualquier dispositivo."
+        },
+        {
+          icon: Eye,
+          title: "Seguridad Predictiva",
+          description: "Sensores inteligentes que detectan y previenen problemas antes de que ocurran, no solo los monitoran."
+        }
+      ];
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -163,15 +171,28 @@ const ServiceDetail = () => {
             <div className="max-w-4xl space-y-6">
               {/* Titular principal - Mayúsculas, impactante */}
               <h1 className="text-5xl md:text-7xl font-black uppercase leading-tight tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                LOGÍSTICA QUÍMICA
-                <br />
-                <span className="text-[#f5a623]">SIN INTERRUPCIONES.</span>
+                {service.heroTitle ? (
+                  service.heroTitle.split(' ').length > 3 ? (
+                    <>
+                      {service.heroTitle.split(' ').slice(0, -2).join(' ')}
+                      <br />
+                      <span className="text-[#f5a623]">{service.heroTitle.split(' ').slice(-2).join(' ')}</span>
+                    </>
+                  ) : (
+                    service.heroTitle
+                  )
+                ) : (
+                  <>
+                    LOGÍSTICA QUÍMICA
+                    <br />
+                    <span className="text-[#f5a623]">SIN INTERRUPCIONES.</span>
+                  </>
+                )}
               </h1>
 
               {/* Subtítulo moderno */}
               <p className="text-xl md:text-2xl text-white/90 max-w-2xl font-light" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                Moviliza tu carga crítica con la tecnología más segura.
-                <span className="text-[#f5a623] font-semibold"> Así de simple.</span>
+                {service.heroSubtitle || "Moviliza tu carga crítica con la tecnología más segura. Así de simple."}
               </p>
 
               {/* CTA Principal */}
