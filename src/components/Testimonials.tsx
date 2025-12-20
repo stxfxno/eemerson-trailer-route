@@ -66,6 +66,7 @@ const Testimonials = () => {
                       <img
                         src={testimonial.logo}
                         alt={testimonial.company}
+                        loading="lazy"
                         className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                       />
                     </div>

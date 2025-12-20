@@ -1,24 +1,30 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
-import AboutUs from "./pages/AboutUs";
-import ServicesPage from "./pages/ServicesPage";
-import ServiceDetail from "./pages/ServiceDetail";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 
-const queryClient = new QueryClient();
+// Lazy load pages for code splitting
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#f5a623]"></div>
+  </div>
+);
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+  <>
+    <Toaster />
+    <Sonner />
+    <BrowserRouter>
+      <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/sobre-nosotros" element={<AboutUs />} />
@@ -28,10 +34,10 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <WhatsAppButton />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </Suspense>
+      <WhatsAppButton />
+    </BrowserRouter>
+  </>
 );
 
 export default App;

@@ -57,6 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Brand colors
+        brand: {
+          navy: "#1a2332",
+          gold: "#f5a623",
+        },
+      },
+      fontFamily: {
+        montserrat: ["'Montserrat'", "sans-serif"],
+        opensans: ["'Open Sans'", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
