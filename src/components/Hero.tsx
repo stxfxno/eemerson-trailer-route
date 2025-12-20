@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-truck.webp";
+import heroVideo from "@/assets/track.mp4";
 
 const Hero = () => {
   const handleScrollToServices = () => {
@@ -21,17 +21,20 @@ const Hero = () => {
       {/* Overlay más agresivo */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/85 to-[#1a2332]/60 z-10" />
 
-      {/* Imagen con filtros */}
-      <img
-        src={heroImage}
-        alt="Transporte de carga profesional"
+      {/* Video de fondo */}
+      <video
+        src={heroVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover object-center brightness-75 contrast-125"
       />
 
       <div className="relative z-20 container mx-auto px-4 py-20 md:py-28">
         <div className="max-w-4xl">
           {/* Titular moderno y directo */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 uppercase leading-tight tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 uppercase leading-tight tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             TRANSPORTE
             <br />
             <span className="text-[#f5a623]">SIN LÍMITES.</span>

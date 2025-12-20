@@ -47,11 +47,6 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: "Encuéntranos en",
-      content: "Callao y Lima Metropolitana, Perú"
-    },
-    {
       icon: Phone,
       title: "Llámanos",
       content: "(01) 691-0940 - +51 994172181"
