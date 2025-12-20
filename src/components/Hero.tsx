@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[700px] lg:min-h-[750px] bg-[#1a2332] overflow-hidden flex items-center">
+    <section className="relative w-full h-[calc(100vh-120px)] min-h-[550px] bg-[#1a2332] overflow-hidden flex items-center">
       {/* Overlay más agresivo */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/85 to-[#1a2332]/60 z-10" />
 

@@ -24,27 +24,26 @@ const Header = () => {
       <TopBar />
       <div className="border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo y navegación a la izquierda */}
-        <div className="flex items-center gap-8">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Eemerson SAC Logo" className="h-12 w-12" />
-          </Link>
+        {/* Logo a la izquierda */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Eemerson SAC Logo" className="h-12 w-12" />
+        </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-foreground hover:text-accent transition-colors">
-              Inicio
-            </Link>
-            <Link to="/sobre-nosotros" className="text-foreground hover:text-accent transition-colors">
-              Sobre Nosotros
-            </Link>
-            <Link to="/servicios" className="text-foreground hover:text-accent transition-colors">
-              Servicios
-            </Link>
-            <Link to="/contacto" className="text-foreground hover:text-accent transition-colors">
-              Contacto
-            </Link>
-          </nav>
-        </div>
+        {/* Navegación centrada */}
+        <nav className="hidden md:flex items-center gap-20">
+          <Link to="/" className="text-foreground hover:text-accent transition-colors font-medium">
+            Inicio
+          </Link>
+          <Link to="/sobre-nosotros" className="text-foreground hover:text-accent transition-colors font-medium">
+            Sobre Nosotros
+          </Link>
+          <Link to="/servicios" className="text-foreground hover:text-accent transition-colors font-medium">
+            Servicios
+          </Link>
+          <Link to="/contacto" className="text-foreground hover:text-accent transition-colors font-medium">
+            Contacto
+          </Link>
+        </nav>
 
         {/* CTA a la derecha */}
         <div className="hidden md:block">

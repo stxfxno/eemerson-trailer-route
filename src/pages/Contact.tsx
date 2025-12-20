@@ -69,7 +69,7 @@ const Contact = () => {
 
       <main className="flex-1">
         {/* Hero Section - Moderno y Dinámico */}
-        <section className="relative bg-[#1a2332] text-white overflow-hidden min-h-[400px] flex items-center">
+        <section className="relative bg-[#1a2332] text-white overflow-hidden min-h-[50vh] py-20 md:py-28 flex items-center">
           {/* Overlay con gradiente */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332] via-[#1a2332]/90 to-[#1a2332]/70 z-10"></div>
 

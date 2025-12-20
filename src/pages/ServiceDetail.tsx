@@ -112,7 +112,7 @@ const ServiceDetail = () => {
 
       <main className="flex-1">
         {/* Hero Section - Moderno y Dinámico */}
-        <section className="relative bg-[#1a2332] text-white overflow-hidden min-h-[600px] flex items-center">
+        <section className="relative bg-[#1a2332] text-white overflow-hidden min-h-[50vh] py-20 md:py-28 flex items-center">
           {/* Overlay con gradiente más agresivo */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/85 to-[#1a2332]/60 z-10"></div>
 

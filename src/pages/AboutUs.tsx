@@ -11,7 +11,7 @@ const AboutUs = () => {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full min-h-[500px] md:min-h-[600px] bg-[#1a2332] overflow-hidden flex items-center">
+        <section className="relative w-full min-h-[50vh] py-20 md:py-28 bg-[#1a2332] overflow-hidden flex items-center">
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/85 to-[#1a2332]/60 z-10"></div>
           <img
             src={aboutHeroImage}
