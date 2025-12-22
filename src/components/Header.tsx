@@ -20,9 +20,8 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-background">
+    <header className="w-full bg-transparent absolute top-0 left-0 right-0 z-40">
       <TopBar />
-      <div className="border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo a la izquierda */}
         <Link to="/" className="flex items-center gap-2">
@@ -31,16 +30,16 @@ const Header = () => {
 
         {/* Navegación centrada */}
         <nav className="hidden md:flex items-center gap-20">
-          <Link to="/" className="text-foreground hover:text-accent transition-colors font-medium">
+          <Link to="/" className="text-white hover:text-[#f5a623] transition-colors font-bold">
             Inicio
           </Link>
-          <Link to="/sobre-nosotros" className="text-foreground hover:text-accent transition-colors font-medium">
+          <Link to="/sobre-nosotros" className="text-white hover:text-[#f5a623] transition-colors font-bold">
             Sobre Nosotros
           </Link>
-          <Link to="/servicios" className="text-foreground hover:text-accent transition-colors font-medium">
+          <Link to="/servicios" className="text-white hover:text-[#f5a623] transition-colors font-bold">
             Servicios
           </Link>
-          <Link to="/contacto" className="text-foreground hover:text-accent transition-colors font-medium">
+          <Link to="/contacto" className="text-white hover:text-[#f5a623] transition-colors font-bold">
             Contacto
           </Link>
         </nav>
@@ -138,7 +137,6 @@ const Header = () => {
             </div>
           </div>
         )}
-      </div>
     </header>
   );
 };
