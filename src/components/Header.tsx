@@ -30,16 +30,16 @@ const Header = () => {
 
         {/* Navegación centrada */}
         <nav className="hidden md:flex items-center gap-20">
-          <Link to="/" className="text-white hover:text-[#f5a623] transition-colors font-bold">
+          <Link to="/" className="text-white hover:text-[#f5a623] transition-colors font-bold text-lg">
             Inicio
           </Link>
-          <Link to="/sobre-nosotros" className="text-white hover:text-[#f5a623] transition-colors font-bold">
+          <Link to="/sobre-nosotros" className="text-white hover:text-[#f5a623] transition-colors font-bold text-lg">
             Sobre Nosotros
           </Link>
-          <Link to="/servicios" className="text-white hover:text-[#f5a623] transition-colors font-bold">
+          <Link to="/servicios" className="text-white hover:text-[#f5a623] transition-colors font-bold text-lg">
             Servicios
           </Link>
-          <Link to="/contacto" className="text-white hover:text-[#f5a623] transition-colors font-bold">
+          <Link to="/contacto" className="text-white hover:text-[#f5a623] transition-colors font-bold text-lg">
             Contacto
           </Link>
         </nav>

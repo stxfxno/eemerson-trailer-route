@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star, Quote } from "lucide-react";
 import fopesaLogo from "@/assets/fopesa-logo.webp";
-import croslandLogo from "@/assets/crosland-logo.png";
+import croslandLogo from "@/assets/crosland-logo-v2.png";
 
 const Testimonials = () => {
   const testimonials = [
@@ -54,8 +54,8 @@ const Testimonials = () => {
           <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-2 border-white/10 bg-white hover:shadow-2xl hover:border-[#f5a623]/50 transition-all duration-300 h-full backdrop-blur-sm hover:-translate-y-2">
-                  <CardContent className="p-8 flex flex-col h-full min-h-[350px] relative">
+                <Card className="border-2 border-white/10 bg-gradient-to-b from-[#1a2332] via-[#2d3e50] to-[#f5a623] hover:shadow-2xl hover:border-[#f5a623] transition-all duration-300 h-full backdrop-blur-sm hover:-translate-y-2 max-w-[380px] mx-auto">
+                  <CardContent className="p-8 flex flex-col h-full min-h-[380px] relative">
                     {/* Quote icon decorativo */}
                     <Quote className="absolute top-6 right-6 w-12 h-12 text-[#f5a623]/20" />
 
@@ -77,13 +77,13 @@ const Testimonials = () => {
                     </div>
 
                     {/* Testimonio */}
-                    <p className="text-[#1a2332] text-base mb-6 flex-grow italic leading-relaxed font-light relative z-10 text-center" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                    <p className="text-white text-base mb-6 flex-grow italic leading-relaxed font-light relative z-10 text-center" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                       "{testimonial.quote}"
                     </p>
 
                     {/* Nombre de la empresa abajo */}
-                    <div className="border-t-2 border-[#f5a623]/30 pt-4 mt-auto relative z-10 text-center">
-                      <p className="font-bold text-[#1a2332] uppercase tracking-wide text-lg" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                    <div className="border-t-2 border-white/30 pt-4 mt-auto relative z-10 text-center">
+                      <p className="font-bold text-white uppercase tracking-wide text-lg" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                         {testimonial.company}
                       </p>
                     </div>
